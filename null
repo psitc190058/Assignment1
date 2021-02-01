@@ -1,0 +1,112 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    string name, identity;
+    int printer=500;
+    int phone=200;
+    int table=100;
+    double vat=(.12);
+    float payment;
+    int item1, item2, item3;
+
+    cout<< "INF SUPERMARKET" << endl;
+    cout<< "" <<endl;
+
+    cout<< "Please enter your name" << endl;
+    getline(cin, name);
+    cout<< "Please enter your ID" << endl;
+    getline(cin, identity);
+    cout<< "Thank you" << endl;
+    cout<< "" <<endl;
+
+    cout<< "A printer costs $500" << endl;
+    cout<< "if you wish to purchase a printer please enter the number of pieces you wish to purchase" << endl;
+    cin>> item1;
+
+    cout<< "A phone costs $200" << endl;
+    cout<< "if you wish to purchase a phone please enter the number of pieces you wish to purchase" << endl;
+    cin>> item2;
+
+    cout<< "A table costs $100" << endl;
+    cout<< "if you wish to purchase a table please enter the number of pieces you wish to purchase" << endl;
+    cin>> item3;
+    cout<< "" <<endl;
+
+    int total_amount=((printer*item1)+(phone*item2)+(table*item3));
+    int total= (vat*total_amount)+total_amount;
+
+    cout<< "the number of items you wish to purchase will cost =$";
+    cout<< total_amount <<endl;
+    cout<< "total cost(vat included) =$";
+    cout<< total <<endl;
+
+    cout<< "How much do you wish to pay" <<endl;
+    cin>> payment;
+
+   if(payment==total)
+        {
+        cout<< "Thank you for your payment." <<endl;
+        }
+        else if(payment>total)
+            {
+            cout<< "Thank you for your payment." <<endl;
+            cout<< "Your change will appear on your receipt." <<endl;
+            }
+            else if(payment<total)
+                {
+                cout<< "Thank you for your payment." <<endl;
+                cout<< "Unfortunately, your payment is less than your total cost" <<endl;
+                cout<< "Your balance will appear on your receipt." <<endl;
+            }
+
+    int balance=(total-payment);
+    int change=(payment-total);
+
+    cout<< "" <<endl;
+    cout<< "" <<endl;
+
+    cout<< "INF SUPERMARKET" << endl;
+    cout<< "" <<endl;
+    cout<< name <<endl;
+    cout<< identity <<endl;
+    cout<< "Printer= ";
+    cout<< item1;
+    cout<< "= $";
+    cout<< printer*item1 <<endl;
+    cout<< "Phone= ";
+    cout<< item2;
+    cout<< "= $";
+    cout<< phone*item2 <<endl;
+    cout<< "Table= ";
+    cout<< item3;
+    cout<< "= $";
+    cout<< table*item3 <<endl;
+    cout<< "Vat Amount= ";
+    cout<< vat;
+    cout<< "%" <<endl;
+    cout<< "Total Cost= $";
+    cout<< total <<endl;
+    cout<< "Total Amount Paid= $";
+    cout<< payment <<endl;
+
+    if (payment==total)
+    {
+        cout<< "Thank you for trading with us" <<endl;
+    }
+        else if (payment>total)
+        {
+            cout<< "Your Change is= $";
+            cout<< change <<endl;
+            cout<< "Thank you for trading with us" <<endl;
+        }
+            else if (payment<total)
+            {
+                cout<< "Your Balance is= -$";
+                cout<< balance <<endl;
+                cout<< "Thank you for trading with us" <<endl;
+            }
+
+
+}
